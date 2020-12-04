@@ -1,0 +1,9 @@
+body {
+  font-family: "Open Sans Condensed", sans-serif;
+  color: #ab47bc;
+  text-align: center;
+  background-color: #fcf8fc;
+}
+li {
+  list-style: none;
+}
