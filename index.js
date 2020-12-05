@@ -33,20 +33,19 @@ function currentResults(response) {
   document.querySelector("#description").innerHTML = response.data.weather[0].description;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;  
-  document.querySelector("#precipitation").innerHTML = showPrecipitation(rain);
+  document.querySelector("#precipitation").innerHTML = showPrecipitation(response);
   console.log(response.data);
 }
 
-function showPrecipitation() {
-  console.log(response.data.rain[`1h`]);
+function showPrecipitation(response) {
   let precipitation = response.data.rain[`1h`];
-  let showPrecipitation = document.querySelector("#precipitation");
+  let showRain = document.querySelector("#precipitation");
 
-  if (precipitation === undefined) {
-    showPrecipitation.innerHTML = `-`;
+  if (precipitation === undefined || precipitation === null) {
+    showRain.innerHTML = `-`;
   }
   else {
-    showPrecipitation.innerHTML = Math.round(response.data.rain[`1h`]);
+    showRain.innerHTML = precipitation;
   }
 }
 
