@@ -29,11 +29,20 @@ function currentResults(response) {
   document.querySelector("#current-city").innerHTML = response.data.name;
   document.querySelector("#current-temperature").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#description").innerHTML = response.data.weather[0].description;
-  document.querySelector("#wind").innerHTML = response.data.wind.speed;
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#precipitation").innerHTML = response.data.rain[`1h`];
+  document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;  
+  document.querySelector("#precipitation").innerHTML = showPrecipitation(rain);
   console.log(response.data);
-  console.log(response.data.rain[`1h`]);
+}
+
+function showPrecipitation(rain) {
+  let precipitation = document.querySelector("#precipitation");
+  precipitation.innerHTML = response.data.rain[`1h`];
+  if (precipitation > 0) {
+    precipitation = Math.round(response.data.rain[`1h`]);}
+    else {
+      precipitation = `-`;
+    }
 }
 
 function searchCity(city) {
@@ -71,3 +80,5 @@ function getCurrentLocation(event) {
 
 let currentTempButton = document.querySelector("#current-location-button");
 currentTempButton.addEventListener("click", getCurrentLocation);
+
+searchCity("London");

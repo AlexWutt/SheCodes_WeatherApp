@@ -29,7 +29,12 @@
           <div class="col-6">
             <div class="search">
               <form id="search-form">
-                <input type="text" placeholder="Enter a city" id="city-input" />
+                <input
+                  type="search"
+                  placeholder="Enter a city"
+                  id="city-input"
+                  autocomplete="off"
+                />
                 <input type="submit" id="go-button" value="Search" />
                 <input
                   type="submit"
@@ -41,11 +46,11 @@
             <div class="current-conditions">
               <h1 class="current-city" id="current-city"></h1>
               <img src="" alt="" id="current-icon" />
-              <h2><span id="current-temperature"></span></h2>
+              <h2><span id="current-temperature"></span>° C F</h2>
               <h3 id="description"></h3>
               <ul class="weather-conditions">
-                <li>Wind: <span id="wind"></span>km/h</li>
-                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> m/h</li>
+                <li>Humidity: <span id="humidity"></span> %</li>
                 <li>Precipitation: <span id="precipitation"></span></li>
               </ul>
               <div class="current-temperature">
