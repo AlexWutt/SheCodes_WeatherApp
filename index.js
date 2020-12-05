@@ -26,8 +26,10 @@ function currentResults(response) {
   icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   icon.setAttribute("alt", response.data.weather[0].description);
 
+  celsTemp = response.data.main.temp;
+
   document.querySelector("#current-city").innerHTML = response.data.name;
-  document.querySelector("#current-temperature").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#current-temperature").innerHTML = Math.round(celsTemp);
   document.querySelector("#description").innerHTML = response.data.weather[0].description;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;  
@@ -81,4 +83,27 @@ function getCurrentLocation(event) {
 let currentTempButton = document.querySelector("#current-location-button");
 currentTempButton.addEventListener("click", getCurrentLocation);
 
-searchCity("London");
+function showFahrTemp(event) {
+event.preventDefault();
+celsLink.classList.remove("units");
+fahrLink.classList.add("units");
+let fahrTemp = (celsTemp * 9) / 5 + 32;
+let tempNumber = document.querySelector("#current-temperature");
+tempNumber.innerHTML = Math.round(fahrTemp);
+}
+
+function showCelsTemp(event) {
+event.preventDefault(); 
+celsLink.classList.add("units");
+fahrLink.classList.remove("units");
+let tempNumber = document.querySelector("#current-temperature");
+tempNumber.innerHTML = Math.round(celsTemp);
+}
+
+let celsTemp = null;
+
+let fahrLink = document.querySelector("#fahr-link");
+fahrLink.addEventListener("click", showFahrTemp);
+
+let celsLink = document.querySelector("#cels-link");
+celsLink.addEventListener("click", showCelsTemp);
