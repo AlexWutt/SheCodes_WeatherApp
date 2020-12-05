@@ -2,20 +2,52 @@ body {
   font-family: "Open Sans Condensed", sans-serif;
   color: #ab47bc;
   text-align: center;
-  background-color: #fcf8fc;
+  background-color: #efd9d1;
+}
+
+.container {
+  padding: 20px;
+}
+
+.weather-app {
+  border: #54007d;
+  border-style: double;
+  background-color: #e1bee7;
+}
+.row {
+  margin-top: 30px;
+}
+
+#description {
+  font-size: 25px;
+  font-style: italic;
+  color: #7b1fa2;
+  margin: 0px 0px 15px 0px;
 }
 li {
   list-style: none;
 }
-
+.weather-conditions {
+  padding: 0px;
+}
 .weather-conditions li {
   display: inline;
+  margin: 5px 10px 5px 10px;
+}
+
+#cels-link {
+  color: #ab47bc;
+}
+
+#fahr-link {
+  color: #ab47bc;
 }
 
 .units {
   font-size: 20px;
   text-decoration: none;
   color: #ab47bc;
+  margin: 0px;
 }
 .units .active {
   text-decoration: none;
@@ -24,4 +56,91 @@ li {
 .units :hover {
   text-decoration: none;
   color: #ab47bc;
+}
+
+.hdd li {
+  padding: 10px;
+  margin: 10 0 10 0;
+}
+ul.hdd {
+  margin: 40px 0px 0px 0px;
+  padding: 0px;
+}
+.current-city {
+  font-size: 50px;
+  margin-top: 15px;
+}
+#current-hour {
+  font-size: 50px;
+  color: #b300b3;
+}
+
+#current-day {
+  font-size: 20px;
+  color: #7b1fa2;
+}
+
+#current-date {
+  font-size: 50px;
+  color: #b300b3;
+}
+
+#current-temperature {
+  font-size: 40px;
+  margin: 30px 0px 0px 0px;
+  padding: 2px;
+}
+
+h1 {
+  margin: 15px 0px 10px 0px;
+  color: #b300b3;
+}
+h2 {
+  line-height: 70px;
+  margin: 0;
+}
+
+#current-icon {
+  margin: 0px auto;
+}
+
+#city-input {
+  line-height: 40px;
+  color: #ab47bc;
+  text-align: center;
+  background-color: whitesmoke;
+  border-color: #54007d;
+  border-style: groove;
+  border-width: thin;
+  border-radius: 30px;
+  margin: 5px 20px 5px 5px;
+  padding: 10px 15px 10px 15px;
+}
+
+::placeholder {
+  color: #ab47bc;
+  font-style: italic;
+  text-align: center;
+}
+
+#search-button {
+  line-height: 40px;
+  color: #ab47bc;
+  text-align: center;
+  background-color: #efd9d1;
+  border-style: none;
+  border-radius: 15px;
+  margin: 5px 10px 5px 10px;
+  padding: 5px 10px;
+}
+
+#current-location-button {
+  line-height: 40px;
+  color: #ab47bc;
+  text-align: center;
+  background-color: #efd9d1;
+  border-style: none;
+  border-radius: 15px;
+  margin: 5px 10px 5px 10px;
+  padding: 5px 10px;
 }
