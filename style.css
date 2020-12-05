@@ -8,6 +8,20 @@ li {
   list-style: none;
 }
 
+.weather-conditions li {
+  display: inline;
+}
+
 .units {
+  font-size: 20px;
   text-decoration: none;
+  color: #ab47bc;
+}
+.units .active {
+  text-decoration: none;
+  color: #ab47bc;
+}
+.units :hover {
+  text-decoration: none;
+  color: #ab47bc;
 }

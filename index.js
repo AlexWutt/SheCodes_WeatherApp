@@ -32,21 +32,8 @@ function currentResults(response) {
   document.querySelector("#current-temperature").innerHTML = Math.round(celsTemp);
   document.querySelector("#description").innerHTML = response.data.weather[0].description;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;  
-  document.querySelector("#precipitation").innerHTML = showPrecipitation(response);
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   console.log(response.data);
-}
-
-function showPrecipitation(response) {
-  let precipitation = response.data.rain[`1h`];
-  let showRain = document.querySelector("#precipitation");
-
-  if (precipitation === undefined || precipitation === null) {
-    showRain.innerHTML = `-`;
-  }
-  else {
-    showRain.innerHTML = precipitation;
-  }
 }
 
 function searchCity(city) {
@@ -87,8 +74,8 @@ currentTempButton.addEventListener("click", getCurrentLocation);
 
 function showFahrTemp(event) {
 event.preventDefault();
-celsLink.classList.remove("units");
-fahrLink.classList.add("units");
+celsLink.classList.remove("active");
+fahrLink.classList.add("active");
 let fahrTemp = (celsTemp * 9) / 5 + 32;
 let tempNumber = document.querySelector("#current-temperature");
 tempNumber.innerHTML = Math.round(fahrTemp);
@@ -96,8 +83,8 @@ tempNumber.innerHTML = Math.round(fahrTemp);
 
 function showCelsTemp(event) {
 event.preventDefault(); 
-celsLink.classList.add("units");
-fahrLink.classList.remove("units");
+celsLink.classList.add("active");
+fahrLink.classList.remove("active");
 let tempNumber = document.querySelector("#current-temperature");
 tempNumber.innerHTML = Math.round(celsTemp);
 }
