@@ -37,14 +37,17 @@ function currentResults(response) {
   console.log(response.data);
 }
 
-function showPrecipitation(rain) {
-  let precipitation = document.querySelector("#precipitation");
-  precipitation.innerHTML = response.data.rain[`1h`];
-  if (precipitation > 0) {
-    precipitation = Math.round(response.data.rain[`1h`]);}
-    else {
-      precipitation = `-`;
-    }
+function showPrecipitation() {
+  console.log(response.data.rain[`1h`]);
+  let precipitation = response.data.rain[`1h`];
+  let showPrecipitation = document.querySelector("#precipitation");
+
+  if (precipitation === undefined) {
+    showPrecipitation.innerHTML = `-`;
+  }
+  else {
+    showPrecipitation.innerHTML = Math.round(response.data.rain[`1h`]);
+  }
 }
 
 function searchCity(city) {
